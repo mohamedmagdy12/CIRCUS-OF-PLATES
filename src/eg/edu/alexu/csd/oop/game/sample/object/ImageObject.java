@@ -21,6 +21,9 @@ public class ImageObject implements GameObject,protoType {
 	public int getColor() {
 		return color;
 	}
+	public void setColor(int color){
+		this.color = color;
+	}
 
 	private int y;
 	private boolean visible;
@@ -68,6 +71,7 @@ public class ImageObject implements GameObject,protoType {
 		this.y = posY;
 		this.type = type;
 		this.visible = true;
+
         this.moveshape = new moving(this);
 		// create a bunch of buffered images and place into an array, to be displayed sequentially
 		try {

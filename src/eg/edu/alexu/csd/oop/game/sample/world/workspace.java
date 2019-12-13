@@ -28,6 +28,10 @@ public class workspace implements World {
     private List<GameObject> moving = new LinkedList();
   private  final List<GameObject> control = new LinkedList();
 
+
+
+  private int red = 0,blue = 0,pink = 0;
+
   private cloneFactory cloneFactory = new cloneFactory();
 
     public static workspace getInstance(){
@@ -148,7 +152,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
           }
           unprocessedtime =0;
       }
-
+    // 0 blue, 1 red, 2 pink
     for (GameObject m : moving ) {
         if( ((ImageObject)m).isInuse()) {
             if (intersect(control.get(1), m)) {
@@ -157,6 +161,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     control.add(copied);
                     ((ImageObject) m).setVisible(false);
+                    System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
                 } catch (CloneNotSupportedException e) {
                     e.printStackTrace();
@@ -168,6 +173,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     control.add(copied);
                     ((ImageObject) m).setVisible(false);
+                    System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
                 } catch (CloneNotSupportedException e) {
                     e.printStackTrace();
@@ -178,6 +184,8 @@ public boolean intersect(GameObject o1 , GameObject o2){
         }
 
     }
+
+
     criticalSection.release();
     return true;
   }

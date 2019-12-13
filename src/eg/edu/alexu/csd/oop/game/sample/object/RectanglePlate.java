@@ -13,12 +13,15 @@ public class RectanglePlate extends ImageObject {
         switch (this.getColor()){
             case 0:
                 ImageObject img0 = new ImageObject(this.getX(),this.getY(),"/alien1.png",3,(this.getX() == 0) ? false : true ,0);
+                img0.setColor(this.getColor());
                 return img0;
             case 1:
                 ImageObject img1 = new ImageObject(this.getX(),this.getY(),"/alien4.png",3,(this.getX() == 0) ? false : true ,1);
+                img1.setColor(this.getColor());
                 return img1;
             default:
                 ImageObject img2 = new ImageObject(this.getX(),this.getY(),"/alien3.png",3,(this.getX() == 0) ? false : true ,2);
+                img2.setColor(this.getColor());
                 return img2;
         }
     }

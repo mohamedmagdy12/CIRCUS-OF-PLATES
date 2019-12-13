@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ShapeState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/horizontal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/moving.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/vertical.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Plate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Plate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" afterDir="false" />
@@ -44,25 +37,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../game2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="eg.edu.alexu.csd.oop.game.sample.object" />
       <recent name="eg.edu.alexu.csd.oop.game.sample.world" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -83,6 +64,18 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -149,10 +142,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="981" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576240319559" />
-    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576174832359">
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576258082634">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1576174832359" />
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1576258082634" />
     <state x="501" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576239847718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -161,22 +154,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576192863603" />
-    <state width="1342" height="274" key="GridCell.Tab.0.bottom" timestamp="1576241654406">
+    <state x="529" y="173" key="FileChooserDialogImpl" timestamp="1576264513942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="274" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576241654406" />
-    <state width="1342" height="274" key="GridCell.Tab.0.center" timestamp="1576241654405">
+    <state x="529" y="173" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576264513942" />
+    <state width="1342" height="206" key="GridCell.Tab.0.bottom" timestamp="1576267341663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="274" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
-    <state width="1342" height="274" key="GridCell.Tab.0.left" timestamp="1576241654405">
+    <state width="1342" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
+    <state width="1342" height="206" key="GridCell.Tab.0.center" timestamp="1576267341663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="274" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
-    <state width="1342" height="274" key="GridCell.Tab.0.right" timestamp="1576241654405">
+    <state width="1342" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
+    <state width="1342" height="206" key="GridCell.Tab.0.left" timestamp="1576267341663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="274" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
+    <state width="1342" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
+    <state width="1342" height="206" key="GridCell.Tab.0.right" timestamp="1576267341663">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
     <state x="363" y="151" key="Vcs.Push.Dialog.v2" timestamp="1576192877756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -191,7 +188,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java</url>
-          <line>168</line>
+          <line>173</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
