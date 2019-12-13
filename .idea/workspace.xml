@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ShapeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/horizontal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/moving.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/vertical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Plate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Plate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1UkUis59LagMputY9hNxySc8yos" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="eg.edu.alexu.csd.oop.game.sample.object" />
+      <recent name="eg.edu.alexu.csd.oop.game.sample.world" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eg.edu.alexu.csd.oop.game.sample.Main" />
+      <module name="Sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eg.edu.alexu.csd.oop.game.sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="" />
+      <created>1575900216560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575900216560</updated>
+    </task>
+    <task id="LOCAL-00001" summary="shoya b3bsa 3la el mashy">
+      <created>1576187549655</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576187549655</updated>
+    </task>
+    <task id="LOCAL-00002" summary="shoya b3bsa 3la el mashy">
+      <created>1576188575704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576188575704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="shoya b3bsa 3la el mashy">
+      <created>1576189698604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576189698604</updated>
+    </task>
+    <task id="LOCAL-00004" summary="shoya b3bsa 3la el mashy">
+      <created>1576192865810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576192865810</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="shoya b3bsa 3la el mashy" />
+    <option name="LAST_COMMIT_MESSAGE" value="shoya b3bsa 3la el mashy" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="981" y="146" key="#com.intellij.ide.util.MemberChooser" timestamp="1576240319559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="981" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576240319559" />
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576174832359">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1576174832359" />
+    <state x="501" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576239847718">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="501" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576239847718" />
+    <state x="426" y="13" key="CommitChangelistDialog2" timestamp="1576192863603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576192863603" />
+    <state width="1342" height="274" key="GridCell.Tab.0.bottom" timestamp="1576241654406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="274" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576241654406" />
+    <state width="1342" height="274" key="GridCell.Tab.0.center" timestamp="1576241654405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="274" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
+    <state width="1342" height="274" key="GridCell.Tab.0.left" timestamp="1576241654405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="274" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
+    <state width="1342" height="274" key="GridCell.Tab.0.right" timestamp="1576241654405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="274" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576241654405" />
+    <state x="363" y="151" key="Vcs.Push.Dialog.v2" timestamp="1576192877756">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="363" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576192877756" />
+    <state x="466" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1576231057903">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="466" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576231057903" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/game2$Main.ic" NAME="Main Coverage Results" MODIFIED="1576180558685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eg.edu.alexu.csd.oop.game.sample.*</FILTER>
+    </SUITE>
+  </component>
+</project>
