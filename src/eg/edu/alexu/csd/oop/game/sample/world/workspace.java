@@ -28,7 +28,9 @@ public class workspace implements World {
     private List<GameObject> moving = new LinkedList();
   private  final List<GameObject> control = new LinkedList();
 
-
+    private LinkedList<ImageObject> onBar1 = new LinkedList<>();
+    private LinkedList<ImageObject> onBar2 = new LinkedList<>();
+    private PlatesIntersection platesIntersection = PlatesIntersection.getInstance();
 
   private int red = 0,blue = 0,pink = 0;
 
@@ -160,6 +162,18 @@ public boolean intersect(GameObject o1 , GameObject o2){
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     control.add(copied);
+                    onBar1.add(copied);
+                    if(platesIntersection.isSimilar(onBar1)){
+                        System.out.println( "    score =      " + platesIntersection.addScore() );
+                        for (int i=0;i<3;i++){
+                            ImageObject temp = (ImageObject) onBar1.get(onBar1.size() - 1);
+                            temp.setVisible(false);
+                            control.remove(temp);
+                            onBar1.removeLast();
+                        }
+                        up1 = up1 -3;
+
+                    }
                     ((ImageObject) m).setVisible(false);
                     System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
@@ -172,6 +186,17 @@ public boolean intersect(GameObject o1 , GameObject o2){
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     control.add(copied);
+                    onBar2.add(copied);
+                    if(platesIntersection.isSimilar(onBar2)){
+                        System.out.println("    score =      " + platesIntersection.addScore() );
+                        for (int i=0;i<3;i++){
+                            ImageObject temp = (ImageObject) onBar2.get(onBar2.size() - 1);
+                            temp.setVisible(false);
+                            control.remove(temp);
+                            onBar2.removeLast();
+                        }
+                        up2 = up2 -3;
+                    }
                     ((ImageObject) m).setVisible(false);
                     System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlatesIntersection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/VanishSimilarPlates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576192865810</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="shoya b3bsa 3la el mashy">
+      <created>1576267661513</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576267661513</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,34 +155,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576239847718" />
-    <state x="426" y="13" key="CommitChangelistDialog2" timestamp="1576192863603">
+    <state x="426" y="13" key="CommitChangelistDialog2" timestamp="1576267659080">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576192863603" />
+    <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576267659080" />
     <state x="529" y="173" key="FileChooserDialogImpl" timestamp="1576264513942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="529" y="173" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576264513942" />
-    <state width="1342" height="206" key="GridCell.Tab.0.bottom" timestamp="1576267341663">
+    <state width="1493" height="90" key="GridCell.Tab.0.bottom" timestamp="1576274525697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
-    <state width="1342" height="206" key="GridCell.Tab.0.center" timestamp="1576267341663">
+    <state width="1493" height="90" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576274525697" />
+    <state width="1493" height="90" key="GridCell.Tab.0.center" timestamp="1576274525697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
-    <state width="1342" height="206" key="GridCell.Tab.0.left" timestamp="1576267341663">
+    <state width="1493" height="90" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576274525697" />
+    <state width="1493" height="90" key="GridCell.Tab.0.left" timestamp="1576274525697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
-    <state width="1342" height="206" key="GridCell.Tab.0.right" timestamp="1576267341663">
+    <state width="1493" height="90" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576274525697" />
+    <state width="1493" height="90" key="GridCell.Tab.0.right" timestamp="1576274525697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576267341663" />
-    <state x="363" y="151" key="Vcs.Push.Dialog.v2" timestamp="1576192877756">
+    <state width="1493" height="90" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576274525697" />
+    <state x="363" y="151" key="Vcs.Push.Dialog.v2" timestamp="1576267663175">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576192877756" />
+    <state x="363" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576267663175" />
     <state x="466" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1576231057903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -188,7 +193,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java</url>
-          <line>173</line>
+          <line>187</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
