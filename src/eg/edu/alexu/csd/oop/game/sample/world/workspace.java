@@ -4,16 +4,19 @@ import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.sample.object.*;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class workspace implements World {
-
+    private int x =0;
+    public boolean Clicked;
+ private JButton btn1;
     private static workspace workSpace = new workspace();
-
-
+    private Originator originator = new Originator();
+    private CareTaker careTaker;
     int up1 =1;
     int up2 =1;
   private static int timeofthegame = 60000;
@@ -24,9 +27,21 @@ public class workspace implements World {
   private int sw;
   private int sh;
   private ObjectPool pool;
-    private final List<GameObject> constant = new LinkedList();
-    private List<GameObject> moving = new LinkedList();
-  private  final List<GameObject> control = new LinkedList();
+  private  List<GameObject> constant = new LinkedList();
+  private List<GameObject> moving = new LinkedList();
+  private   List<GameObject> control = new LinkedList();
+
+    public void setConstant(List<GameObject> constant) {
+        this.constant = constant;
+    }
+
+    public void setMoving(List<GameObject> moving) {
+        this.moving = moving;
+    }
+
+    public void setControl(List<GameObject> control) {
+        this.control = control;
+    }
 
     private LinkedList<ImageObject> onBar1 = new LinkedList<>();
     private LinkedList<ImageObject> onBar2 = new LinkedList<>();
@@ -46,8 +61,12 @@ public class workspace implements World {
       int dist2 = 0;
         sw = screenWidth;
         sh = screenHeight;
+      ImageObject m = new ImageObject(screenWidth/2, (int)(screenHeight*0.8), "/clown2.png",3,false,0);
+      control.add(m);
+      m.setContrable(true);
 
-      control.add(new ImageObject(screenWidth/2, (int)(screenHeight*0.8), "/clown2.png",3,false,0));
+     btn1 = new JButton("undo");
+     btn1.addActionListener(new ButtonListener(this));
       System.out.println(control.get(0).getHeight());
       System.out.println(control.get(0).getWidth());
       System.out.println(control.get(0).getX());
@@ -67,6 +86,8 @@ public class workspace implements World {
      pool= ObjectPool.get_instance();
         moving = pool.aquireimage();
         moving = pool.aquireimage();
+        careTaker = CareTaker.get_Instance();
+
       /*
       for(int i=0; i<20; i++) {
         ImageObject s = new ImageObject(0, 10, "/alien1.png", 3,false);
@@ -84,8 +105,8 @@ public class workspace implements World {
 
         constant.add(new BarObject(0, 70, 150, true, Color.GREEN));
       constant.add(new BarObject(sw-140, 70, 150, true, Color.GREEN));
-        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE));
-        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE));
+        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE,0));
+        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE,1));
       //control.add(new BarObject(sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
       //control.add(new BarObject(2*sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
 
@@ -128,8 +149,30 @@ public boolean intersect(GameObject o1 , GameObject o2){
     return sh;
   }
 
+   private int ones =1;
   @Override
+
+
   public boolean refresh() {
+     if(Clicked){
+         int x = careTaker.getsize();
+         if(ones > x)return true;
+         System.out.println(careTaker.getMomento(x-ones).getMovable().get(0).getX());
+
+         List<GameObject> movable = careTaker.getMomento(x-ones).getMovable();
+         List<GameObject> statical = careTaker.getMomento(x-ones).getStatical();
+         List<GameObject> controlable = careTaker.getMomento(x-ones).getControl();
+         this.setMoving(movable);
+         this.setConstant(statical);
+         this.setControl(controlable);
+         ones++;
+         return true;
+     }
+     originator.setStatical((List<GameObject>) constant);
+     originator.setMovable((List<GameObject>)moving);
+      originator.setControl((List<GameObject>)control);
+     careTaker.addMomento(originator.StoreInMomento());
+      //System.out.println(control.get(2).getX());
       lock criticalSection = new lock();
       starttime = System.nanoTime()/1000000000.0;
       passedtime = starttime - endtime;
@@ -140,15 +183,6 @@ public boolean intersect(GameObject o1 , GameObject o2){
           try {
               moving = pool.aquireimage();
               moving = pool.aquireimage();
-              /*
-              ImageObject m = (ImageObject) moving.get(moving.size()-1);
-              m.setX(0);
-              m.setLeft(false);
-              moving = pool.aquireimage();
-              ImageObject m2 = (ImageObject) moving.get(moving.size()-1);
-              m2.setX(725);
-              m2.setLeft(true);
-               */
           } catch (CloneNotSupportedException e) {
               e.printStackTrace();
           }
@@ -161,6 +195,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
                 up1++;
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
+                    copied.setContrable(true);
                     control.add(copied);
                     onBar1.add(copied);
                     if(platesIntersection.isSimilar(onBar1)){
@@ -172,8 +207,8 @@ public boolean intersect(GameObject o1 , GameObject o2){
                             onBar1.removeLast();
                         }
                         up1 = up1 -3;
-
                     }
+
                     ((ImageObject) m).setVisible(false);
                     System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
@@ -185,6 +220,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
                 up2++;
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
+                    copied.setContrable(true);
                     control.add(copied);
                     onBar2.add(copied);
                     if(platesIntersection.isSimilar(onBar2)){
@@ -222,7 +258,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
 
   @Override
   public int getSpeed() {
-    return 10;
+    return 3;
   }
 
   @Override

@@ -4,6 +4,7 @@ public class moving{
     private ShapeState state;
     private horizontal horizontalmode;
     private vertical verticalmode;
+    private Static staticmode;
     private int x;
     private int y;
     private boolean left;
@@ -17,8 +18,13 @@ public class moving{
         this.image = image;
         horizontalmode = new horizontal(this);
         verticalmode = new vertical(this);
+        staticmode = new Static(this);
         state = verticalmode;
 
+    }
+
+    public Static getStaticmode() {
+        return staticmode;
     }
 
     public boolean isLeft() {

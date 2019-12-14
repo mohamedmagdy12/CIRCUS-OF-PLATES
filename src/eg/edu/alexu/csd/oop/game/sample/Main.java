@@ -3,12 +3,12 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 
 import eg.edu.alexu.csd.oop.game.GameEngine;
 import eg.edu.alexu.csd.oop.game.GameEngine.GameController;
+import eg.edu.alexu.csd.oop.game.World;
+import eg.edu.alexu.csd.oop.game.sample.object.ButtonListener;
 
 public class Main {
 	
@@ -48,12 +48,16 @@ public class Main {
 		JMenuItem newMenuItem = new JMenuItem("New");
 		JMenuItem pauseMenuItem = new JMenuItem("Pause");
 		JMenuItem resumeMenuItem = new JMenuItem("Resume");
+		JButton btn1 = new JButton("Undo");
 		menu.add(newMenuItem);
 		menu.addSeparator();
 		menu.add(pauseMenuItem);
 		menu.add(resumeMenuItem);
 		menuBar.add(menu);
-		final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 700), menuBar, Color.BLACK);
+		menuBar.add(btn1);
+		World m = new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 700);
+		btn1.addActionListener(new ButtonListener(m));
+		final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", m, menuBar, Color.BLACK);
 		newMenuItem.addActionListener(new ActionListener() {
 		@Override public void actionPerformed(ActionEvent e) {
 			try {

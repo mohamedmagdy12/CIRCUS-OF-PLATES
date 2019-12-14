@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 
-public class BarObject implements GameObject{
+public class BarObject implements GameObject,protoType{
 	public static final int SPRITE_HEIGHT = 5;
 	private static final int MAX_MSTATE = 1;
 	// an array of sprite images that are drawn sequentially
@@ -18,6 +18,12 @@ public class BarObject implements GameObject{
 	private int width;
 	private boolean visible;
 	private boolean horizontalOnly;
+	private int left;
+
+	public BarObject(int x, int y, int width,boolean horizontalOnly,Color color, int left) {
+		this(x,y,width,horizontalOnly,color);
+		this.left = left;
+	}
 
 	public BarObject(int posX, int posY, int width, boolean horizontalOnly, Color color){
 		this.x = posX;
@@ -43,7 +49,11 @@ public class BarObject implements GameObject{
 
 	@Override
 	public void setX(int mX) {
+		if(left == 1 && this.x ==123 && mX < 123){
+          this.x = 123;
+		}else {
 			this.x = mX;
+		}
 	}
 
 	@Override
@@ -80,5 +90,11 @@ public class BarObject implements GameObject{
 	
 	public void setVisible(boolean visible){
 		this.visible = visible;
+	}
+
+	@Override
+	public protoType makeCopy() throws CloneNotSupportedException {
+		BarObject bar = (BarObject) super.clone();
+		return bar;
 	}
 }

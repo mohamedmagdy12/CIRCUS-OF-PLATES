@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import eg.edu.alexu.csd.oop.game.GameObject;
 
 
@@ -17,6 +18,11 @@ public class ImageObject implements GameObject,protoType {
 	// an array of sprite images that are drawn sequentially
 	private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
 	private int x;
+	private boolean Contrable = false;
+
+	public void setContrable(boolean contrable) {
+		Contrable = contrable;
+	}
 
 	public int getColor() {
 		return color;
@@ -116,7 +122,8 @@ public class ImageObject implements GameObject,protoType {
 
 	@Override
 	public void setX(int mX) {
-		this.x = mX;
+
+		     this.x = mX;
 	}
 
 	@Override
@@ -126,7 +133,8 @@ public class ImageObject implements GameObject,protoType {
 
 	@Override
 	public void setY(int mY) {
-		this.y = mY;
+		if(!Contrable)
+		    this.y = mY;
 	}
 
 	@Override
