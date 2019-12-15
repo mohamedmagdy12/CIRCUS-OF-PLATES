@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+//import com.sun.org.apache.xpath.internal.operations.Or;
 import eg.edu.alexu.csd.oop.game.GameObject;
 
 
@@ -171,7 +171,7 @@ public class ImageObject implements GameObject,protoType {
 
 	@Override
 	public protoType makeCopy() throws CloneNotSupportedException {
-		System.out.println("clone is available");
+		//System.out.println("clone is available");
 		ImageObject imageObject = (ImageObject) super.clone();
 		return imageObject;
 	}

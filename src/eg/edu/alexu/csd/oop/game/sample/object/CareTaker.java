@@ -18,8 +18,8 @@ public class CareTaker {
 
     public void addMomento(Momento m){
         saved.add(m);
-        System.out.println(saved.size());
-        System.out.println("hello");
+      //  System.out.println(saved.size());
+       // System.out.println("hello");
     }
     public Momento getMomento(int index){
         return saved.get(index);

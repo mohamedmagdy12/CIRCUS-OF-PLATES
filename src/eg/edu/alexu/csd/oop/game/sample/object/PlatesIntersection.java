@@ -9,7 +9,7 @@ import java.util.List;
 public class PlatesIntersection {
     private static PlatesIntersection platesIntersection = new PlatesIntersection();
 
-    private int score = 0;
+    private  int score = 0;
     private boolean similar = false;
     private List<ImageObject> onBar = new LinkedList<>();
 
@@ -17,6 +17,7 @@ public class PlatesIntersection {
 
 
     public PlatesIntersection(){};
+    public PlatesIntersection(List<ImageObject> onBar ){this.onBar = onBar ;}
 
     public static PlatesIntersection getInstance(){
         return platesIntersection;
@@ -28,16 +29,19 @@ public class PlatesIntersection {
         int n = onBar.size();
         similar =false;
         if(n>=3){
+
             if(onBar.get(n-1).getColor() == onBar.get(n-2).getColor() && onBar.get(n-2).getColor()== onBar.get(n-3).getColor()){
                 similar = true;
             }
         }
         return similar;
     }
+    public int getScore (){
+        return  score ;
+    }
     public int addScore(){
         score++;
         return score;
     }
-
 
 }

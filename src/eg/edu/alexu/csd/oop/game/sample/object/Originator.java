@@ -24,8 +24,8 @@ public class Originator implements Cloneable{
             e.printStackTrace();
         }
         this.control = New;
-        System.out.println(control.get(0).hashCode());
-        System.out.println(New.get(0).hashCode());
+        //System.out.println(control.get(0).hashCode());
+       // System.out.println(New.get(0).hashCode());
 
     }
 
@@ -37,8 +37,8 @@ public class Originator implements Cloneable{
             e.printStackTrace();
         }
       this.movable = New;
-        System.out.println(movable.get(0).hashCode());
-        System.out.println(New.get(0).hashCode());
+        //System.out.println(movable.get(0).hashCode());
+        //System.out.println(New.get(0).hashCode());
     }
 
     public void setStatical(List<GameObject> statical) {
@@ -47,7 +47,7 @@ public class Originator implements Cloneable{
     }
 
     public Momento StoreInMomento(){
-        System.out.println("memento is done");
+        //System.out.println("memento is done");
         return new Momento(control,movable,statical);
     }
 
