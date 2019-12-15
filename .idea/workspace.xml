@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Level1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Level2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Level3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/LevelFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlatesFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/CareTaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/CareTaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Originator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Originator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlatesIntersection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlatesIntersection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/VanishSimilarPlates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/VanishSimilarPlates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576267661513</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="el sor3a btt5ir ka value bs sor3t al l3ba nfsha l2">
+      <created>1576441164421</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576441164422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +150,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="shoya b3bsa 3la el mashy" />
-    <option name="LAST_COMMIT_MESSAGE" value="shoya b3bsa 3la el mashy" />
+    <MESSAGE value="el sor3a btt5ir ka value bs sor3t al l3ba nfsha l2" />
+    <option name="LAST_COMMIT_MESSAGE" value="el sor3a btt5ir ka value bs sor3t al l3ba nfsha l2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Project_Structure" timestamp="1576363724976">
@@ -178,10 +174,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1576239847718" />
-    <state x="426" y="13" key="CommitChangelistDialog2" timestamp="1576440957596">
+    <state x="426" y="13" key="CommitChangelistDialog2" timestamp="1576441163364">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576440957596" />
+    <state x="426" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576441163364" />
     <state x="529" y="173" key="FileChooserDialogImpl" timestamp="1576264513942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
