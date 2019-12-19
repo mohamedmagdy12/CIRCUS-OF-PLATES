@@ -55,13 +55,13 @@ public class Main {
 		menu.add(resumeMenuItem);
 		menuBar.add(menu);
 		menuBar.add(btn1);
-		World m = new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 700);
+		World m = new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 600);
 		btn1.addActionListener(new ButtonListener(m));
 		final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", m, menuBar, Color.BLACK);
 		newMenuItem.addActionListener(new ActionListener() {
 		@Override public void actionPerformed(ActionEvent e) {
 			try {
-				final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 700), menuBar, Color.BLACK);
+				final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 600), menuBar, Color.BLACK);
 			} catch (CloneNotSupportedException ex) {
 				ex.printStackTrace();
 			}

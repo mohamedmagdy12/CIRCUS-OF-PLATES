@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.sample.object;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.sample.world.workspace;
 
 import java.util.ArrayList;
@@ -11,6 +12,15 @@ public class ObjectPool {
     private static ObjectPool instance = null;
     private ArrayList <GameObject> reusables ;
     private int maxsize = 20;
+    private  World world;
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
 
     private PlateFactory plateFactory = PlateFactory.getInstance();
 
@@ -32,7 +42,8 @@ public class ObjectPool {
     public ArrayList<GameObject> aquireimage() throws CloneNotSupportedException {
 
         if (reusables.size() < maxsize) {
-            ImageObject plate = plateFactory.generatePlate();
+            System.out.println(world + "i'm hereeee");
+            ImageObject plate = plateFactory.generatePlate(world);
             ImageObject object = plate.draw();
             object.setInuse(true);
             reusables.add(object);

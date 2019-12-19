@@ -2,8 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b1fbdc-9ca9-468e-9f56-e21d9835b06e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ScoreObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ScoreSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/barmovex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/clownmoveX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/constantX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/moveX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/movingObjectX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/BarObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/BarObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ImageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/ObjectPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/PlateFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/RectanglePlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/SquarePlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +66,18 @@
       <recent name="eg.edu.alexu.csd.oop.game.sample.world" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="eg.edu.alexu.csd.oop.game.sample.Main" />
@@ -65,18 +97,6 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,23 +235,18 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java</url>
-          <line>264</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/world/workspace.java</url>
-          <line>176</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/eg/edu/alexu/csd/oop/game/sample/object/movingObjectX.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/game2$Main.ic" NAME="Main Coverage Results" MODIFIED="1576180558685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/asf$Main.ic" NAME="Main Coverage Results" MODIFIED="1576440915039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eg.edu.alexu.csd.oop.game.sample.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/asf$Main.ic" NAME="Main Coverage Results" MODIFIED="1576440915039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/game2$Main.ic" NAME="Main Coverage Results" MODIFIED="1576180558685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>eg.edu.alexu.csd.oop.game.sample.*</FILTER>
     </SUITE>
   </component>

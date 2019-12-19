@@ -9,19 +9,42 @@ import javax.imageio.ImageIO;
 
 //import com.sun.org.apache.xpath.internal.operations.Or;
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.World;
 
 
 public class ImageObject implements GameObject,protoType {
+	private boolean Contrable;
+	private World world;
+	public ImageObject(int x, int y, String s, int i, boolean b, int i1, World world,moveX moveX) {
+		this(x,y,s,i,b,i1);
+		this.world =world;
+		this.moveX = moveX;
+	}
 
-    private  moving moveshape;
-	private static final int MAX_MSTATE = 1;
-	// an array of sprite images that are drawn sequentially
-	private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
-	private int x;
-	private boolean Contrable = false;
+
+	public boolean isContrable() {
+		return Contrable;
+	}
 
 	public void setContrable(boolean contrable) {
 		Contrable = contrable;
+	}
+
+	private  moving moveshape;
+	private moveX moveX;
+	private static final int MAX_MSTATE = 1;
+	// an array of sprite images that are drawn sequentially
+	private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
+	public int x;
+	//private boolean Contrable = false;
+
+	/*public void setContrable(boolean contrable) {
+		Contrable = contrable;
+	}
+*/
+
+	public void setMoveX(moveX moveX) {
+		this.moveX = moveX;
 	}
 
 	public int getColor() {
@@ -31,7 +54,15 @@ public class ImageObject implements GameObject,protoType {
 		this.color = color;
 	}
 
-	private int y;
+	public World getWorld() {
+		return world;
+	}
+
+	public void setWorld(World world) {
+		this.world = world;
+	}
+
+	public int y;
 	private boolean visible;
 	private int type;
 	private boolean left;
@@ -61,8 +92,8 @@ public class ImageObject implements GameObject,protoType {
 
 	public ImageObject(int posX,int posY,int color,int width,int height,boolean visible){
 
-		this.setX(posX);
-		this.setY(posY);
+		this.x=posX;
+		this.y = posY;
 		this.color = color;
 		this.visible = visible;
 	}
@@ -70,7 +101,10 @@ public class ImageObject implements GameObject,protoType {
 	public moving getMoveshape() {
 		return moveshape;
 	}
-
+	public ImageObject(int posX, int posY, String path, int type, boolean left, int color,moveX moveX){
+		this(posX,posY,path,type,left,color);
+		this.moveX = moveX;
+	}
 	public ImageObject(int posX, int posY, String path, int type, boolean left, int color){
 	    this.left = left;
 		this.x = posX;
@@ -121,9 +155,11 @@ public class ImageObject implements GameObject,protoType {
 	}
 
 	@Override
-	public void setX(int mX) {
-
-		     this.x = mX;
+	public void setX(int mX)
+	{
+	  moveX.setcontro(isContrable());
+      int x = moveX.moveX(mX);
+      this.x = x;
 	}
 
 	@Override
@@ -132,10 +168,13 @@ public class ImageObject implements GameObject,protoType {
 	}
 
 	@Override
+
 	public void setY(int mY) {
-		if(!Contrable)
-		    this.y = mY;
+		moveX.setcontro(isContrable());
+		this.y = moveX.moveY(mY);
 	}
+
+
 
 	@Override
 	public BufferedImage[] getSpriteImages() {

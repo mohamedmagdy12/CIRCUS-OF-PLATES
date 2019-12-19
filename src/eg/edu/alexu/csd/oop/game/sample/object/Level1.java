@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Level1  {
     private  int speed ;
-
     public int getSpeed() {
         return 5;
     }

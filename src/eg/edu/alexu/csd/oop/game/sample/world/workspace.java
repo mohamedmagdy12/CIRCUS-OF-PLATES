@@ -12,6 +12,8 @@ import java.util.List;
 
 public class workspace implements World {
     private int x =0;
+    private Subject subject;
+    private Observer o1;
     public boolean Clicked;
  private JButton btn1;
     private static workspace workSpace = new workspace();
@@ -76,8 +78,9 @@ public class workspace implements World {
       int dist2 = 0;
         sw = screenWidth;
         sh = screenHeight;
-      ImageObject m = new ImageObject(screenWidth/2, (int)(screenHeight*0.8), "/clown2.png",3,false,0);
+      ImageObject m = new ImageObject(screenWidth/2, (int)(screenHeight*0.8), "/clown2.png",3,false,0,new clownmoveX(screenWidth/2, (int)(screenHeight*0.8),false));
       control.add(m);
+      //m.setMoveX(new clownmoveX(m.x,m.y,false));
       m.setContrable(true);
 
      btn1 = new JButton("undo");
@@ -99,7 +102,9 @@ public class workspace implements World {
       */
 
      pool= ObjectPool.get_instance();
+        pool.setWorld(this);
         moving = pool.aquireimage();
+
         moving = pool.aquireimage();
         careTaker = CareTaker.get_Instance();
 
@@ -117,11 +122,13 @@ public class workspace implements World {
       // constants objects (gold)
 
 
-
-        constant.add(new BarObject(0, 70, 150, true, Color.GREEN));
-      constant.add(new BarObject(sw-140, 70, 150, true, Color.GREEN));
-        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE,0));
-        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE,1));
+         subject = new ScoreSubject();
+         o1 = new ScoreObserver();
+         subject.register(o1);
+        constant.add(new BarObject(0, 70, 150, true, Color.GREEN,0,new barmovex(0,70,0)));
+      constant.add(new BarObject(sw-140, 70, 150, true, Color.GREEN,0,new barmovex(sw-140,70,1)));
+        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE,0,new barmovex(sw/3+110,(int)(sh*.8),0)));
+        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE,1,new barmovex(2*sw/3-30,(int)(sh*.8),1)));
       //control.add(new BarObject(sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
       //control.add(new BarObject(2*sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
 
@@ -169,6 +176,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
 
 
   public boolean refresh() {
+      System.out.println(control.get(0).getX());
      if(Clicked){
          int x = careTaker.getsize();
          if(ones > x)return true;
@@ -218,10 +226,11 @@ public boolean intersect(GameObject o1 , GameObject o2){
                     if (platesFacade.Similarity()) {
 
                         platesFacade.deleteSimilar();
-
-                        platesIntersection.addScore();
-                        System.out.println( "    score =      " + platesIntersection.getScore());
-                        if (platesIntersection.getScore() > 3 && platesIntersection.getScore() <5 ){
+                       // platesIntersection.addScore();
+                      //  System.out.println( "    score =      " + platesIntersection.getScore());
+                        ((ScoreSubject)subject).setScore( ((ScoreSubject)subject).getScore()+1);
+                        /*
+                        if ((((ScoreSubject)subject).getScore()) > 3 && platesIntersection.getScore() <5 ){
                             this.setSpeed(levelFacade.getLevelOneSpeed());
                             System.out.println("the speed of the facade  plates is  " + levelFacade.getLevelOneSpeed());
                             System.out.println("the speed of the plates is  " + this.getSpeed());
@@ -236,6 +245,7 @@ public boolean intersect(GameObject o1 , GameObject o2){
                             System.out.println("the speed of  plates is  " + this.getSpeed());
                             System.out.println("variable speed is "+ speed);
                         }
+                        */
                         up1 = up1 -3;
 
                     }
@@ -266,21 +276,23 @@ public boolean intersect(GameObject o1 , GameObject o2){
                     onBar2.add(copied);
                     platesFacade = new PlatesFacade(onBar2, (LinkedList<GameObject>) control);
                     if (platesFacade.Similarity()) {
-
                         platesFacade.deleteSimilar();
-                        platesIntersection.addScore();
-                        if (platesIntersection.getScore() > 3 && platesIntersection.getScore() <5 ){
+                       // platesIntersection.addScore();
+                        ((ScoreSubject)subject).setScore( ((ScoreSubject)subject).getScore()+1);
+                        /*
+                        if (platesIntersection.getScore() > 2 && platesIntersection.getScore() <3 ){
                             this.setSpeed(levelFacade.getLevelOneSpeed());
                             System.out.println("the speed of the facade  plates is  " + levelFacade.getLevelOneSpeed());
                             System.out.println("the speed of the plates is  " + this.getSpeed());
-                        }else if (platesIntersection.getScore() >=5 && platesIntersection.getScore() <7){
+                        }else if (platesIntersection.getScore() >=3 && platesIntersection.getScore() <4){
                             this.setSpeed(levelFacade.getLevelTwoSpeed());
                             System.out.println("the speed of the facade plates is  " + levelFacade.getLevelTwoSpeed());
-                        }else if (platesIntersection.getScore() >=7){
+                        }else if (platesIntersection.getScore() >=4){
                             this.setSpeed(levelFacade.getLevelThreeSpeed());
                             System.out.println("the speed of the facade plates is  " + levelFacade.getLevelThreeSpeed());
                             System.out.println("the speed of  plates is  " + this.getSpeed());
                         }
+                        */
                         up2 = up2 -3;
                     }
                     /*if(platesIntersection.isSimilar(onBar2)){
@@ -314,12 +326,13 @@ public boolean intersect(GameObject o1 , GameObject o2){
         this.speed = speed;
     }
     public int getSpeed() {
+        System.out.println("megzooooooooooooooooooooooooo");
       System.out.println("my speed is "+ speed);
         return speed;
     }
   @Override
   public String getStatus() {
-    return "yes";
+    return "Score is " + Integer.toString(((ScoreObserver)o1).getScore());
   }
 
 

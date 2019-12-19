@@ -8,13 +8,14 @@ import java.awt.image.BufferedImage;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 
-public class BarObject implements GameObject,protoType{
+public class BarObject implements GameObject,protoType {
 	public static final int SPRITE_HEIGHT = 5;
 	private static final int MAX_MSTATE = 1;
 	// an array of sprite images that are drawn sequentially
 	private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
 	private int x;
 	private int y;
+	private moveX moveX;
 	private int width;
 	private boolean visible;
 	private boolean horizontalOnly;
@@ -42,19 +43,34 @@ public class BarObject implements GameObject,protoType{
 		g2.dispose();
 	}
 
+	public BarObject(int i, int i1, int i2, boolean b, Color orange, int i3, barmovex barmovex) {
+		this(i,i1,i2,b,orange,i3);
+		this.moveX = barmovex;
+	}
+
 	@Override
 	public int getX() {
 		return x;
 	}
 
+
+
 	@Override
 	public void setX(int mX) {
-		if(left == 1 && this.x ==123 && mX < 123){
-          this.x = 123;
-		}else {
+		this.x  = moveX.moveX(mX);
+		/*
+		if(left == 1 && this.getX()  <= 125 && mX < 125){
+          this.x = 125;
+		}else if(left == 0 && this.getX()  >= 630  && mX > 630){
+			this.x = 630;
+		}else{
 			this.x = mX;
 		}
+		*/
+
 	}
+
+
 
 	@Override
 	public int getY() {
