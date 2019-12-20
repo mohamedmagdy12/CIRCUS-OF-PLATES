@@ -13,6 +13,7 @@ import eg.edu.alexu.csd.oop.game.World;
 
 
 public class ImageObject implements GameObject,protoType {
+	private int controlledby;
 	private boolean Contrable;
 	private World world;
 	public ImageObject(int x, int y, String s, int i, boolean b, int i1, World world,moveX moveX) {
@@ -21,6 +22,13 @@ public class ImageObject implements GameObject,protoType {
 		this.moveX = moveX;
 	}
 
+	public int getControlledby() {
+		return controlledby;
+	}
+
+	public void setControlledby(int controlledby) {
+		this.controlledby = controlledby;
+	}
 
 	public boolean isContrable() {
 		return Contrable;
@@ -158,8 +166,13 @@ public class ImageObject implements GameObject,protoType {
 	public void setX(int mX)
 	{
 	  moveX.setcontro(isContrable());
-      int x = moveX.moveX(mX);
-      this.x = x;
+	  if(moveX instanceof movingObjectX)
+		  ((movingObjectX)moveX).setControledby(controlledby);
+
+      if(moveX.moveX(mX)){
+      	this.x = mX;
+      	moveX.setX(mX);
+	  }
 	}
 
 	@Override

@@ -20,6 +20,6 @@ public class ButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        ((workspace)this.world).Clicked = true;
+        ((workspace)this.world).UndoClicked = true;
     }
 }

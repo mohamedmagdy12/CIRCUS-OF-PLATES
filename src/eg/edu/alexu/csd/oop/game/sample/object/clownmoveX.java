@@ -12,18 +12,23 @@ public class clownmoveX implements moveX{
     }
 
     @Override
-    public int moveX(int mX) {
+    public boolean moveX(int mX) {
         if(mX <= 20)
-            this.x = 20;
+            return false;
         else if(mX >= 650)
-            this.x = 650;
-        else this.x = mX;
-        return this.x;
+            return false;
+
+        return true;
     }
 
     @Override
     public int moveY(int mY) {
         return this.y;
+    }
+
+    @Override
+    public void setX(int mX) {
+        this.x = mX;
     }
 
     @Override

@@ -57,17 +57,10 @@ public class BarObject implements GameObject,protoType {
 
 	@Override
 	public void setX(int mX) {
-		this.x  = moveX.moveX(mX);
-		/*
-		if(left == 1 && this.getX()  <= 125 && mX < 125){
-          this.x = 125;
-		}else if(left == 0 && this.getX()  >= 630  && mX > 630){
-			this.x = 630;
-		}else{
+		if(moveX.moveX(mX)) {
 			this.x = mX;
+			moveX.setX(mX);
 		}
-		*/
-
 	}
 
 

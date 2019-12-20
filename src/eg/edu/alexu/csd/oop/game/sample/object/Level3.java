@@ -8,7 +8,7 @@ import java.util.List;
 public class Level3  {
     private  int speed ;
 
-    public int getSpeed() {
+    public static int getSpeed() {
         return -5;
     }
 

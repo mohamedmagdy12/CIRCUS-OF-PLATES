@@ -2,19 +2,24 @@ package eg.edu.alexu.csd.oop.game.sample.world;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.World;
+import eg.edu.alexu.csd.oop.game.sample.Main;
 import eg.edu.alexu.csd.oop.game.sample.object.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class workspace implements World {
+    public LevelFacade level;
     private int x =0;
     private Subject subject;
     private Observer o1;
-    public boolean Clicked;
+    public boolean UndoClicked;
+    public boolean redoClicked;
+    public boolean counitue;
  private JButton btn1;
     private static workspace workSpace = new workspace();
     private Originator originator = new Originator();
@@ -26,6 +31,7 @@ public class workspace implements World {
   private double endtime =System.nanoTime()/1000000000.0;;
   private double passedtime =0;
   private double unprocessedtime =0;
+  public boolean Undo2;
   private int sw;
   private int sh;
   private ObjectPool pool;
@@ -50,7 +56,9 @@ public class workspace implements World {
     }
 
     public int getControlSpeed() {
-        return 10;
+        if(x==1) return 10;
+        if(x==2)return 20;
+        else return 30;
     }
 
     private LinkedList<ImageObject> onBar1 = new LinkedList<>();
@@ -125,10 +133,10 @@ public class workspace implements World {
          subject = new ScoreSubject();
          o1 = new ScoreObserver();
          subject.register(o1);
-        constant.add(new BarObject(0, 70, 150, true, Color.GREEN,0,new barmovex(0,70,0)));
-      constant.add(new BarObject(sw-140, 70, 150, true, Color.GREEN,0,new barmovex(sw-140,70,1)));
-        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE,0,new barmovex(sw/3+110,(int)(sh*.8),0)));
-        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE,1,new barmovex(2*sw/3-30,(int)(sh*.8),1)));
+        constant.add(new BarObject(0, 70, 150, true, Color.GREEN,0,new barmovex(0,70,1)));
+      constant.add(new BarObject(sw-140, 70, 150, true, Color.GREEN,0,new barmovex(sw-140,70,0)));
+        control.add(new BarObject(sw/3+110, (int)(sh*.8), 50, true, Color.ORANGE,0,new barmovex(sw/3+110,(int)(sh*.8),1)));
+        control.add(new BarObject(2*sw/3-30, (int)(sh*.8), 50, true, Color.ORANGE,1,new barmovex(2*sw/3-30,(int)(sh*.8),0)));
       //control.add(new BarObject(sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
       //control.add(new BarObject(2*sw/3, (int)(sh*.7), 50, true, Color.ORANGE));
 
@@ -172,94 +180,107 @@ public boolean intersect(GameObject o1 , GameObject o2){
   }
 
    private int ones =1;
+    private int counter =0;
+    private String status;
+
+JFrame frame;
   @Override
-
-
   public boolean refresh() {
-      System.out.println(control.get(0).getX());
-     if(Clicked){
-         int x = careTaker.getsize();
-         if(ones > x)return true;
-       //  System.out.println(careTaker.getMomento(x-ones).getMovable().get(0).getX());
 
-         List<GameObject> movable = careTaker.getMomento(x-ones).getMovable();
-         List<GameObject> statical = careTaker.getMomento(x-ones).getStatical();
-         List<GameObject> controlable = careTaker.getMomento(x-ones).getControl();
-         this.setMoving(movable);
-         this.setConstant(statical);
-         this.setControl(controlable);
-         ones++;
-         return true;
-     }
+    if(counter == 60) {
+        counter =0;
+       String fn = JOptionPane.showInputDialog("1 for reply press cancel for exit");
+       if(fn.equals("1")){
+           redoClicked = true;
+           careTaker.present = -1;
+
+       }else return false;
+    }
+
+    if(redoClicked){
+          ++careTaker.present;
+          int x = careTaker.getsize();
+          if(x == careTaker.present){
+              return false;
+          }
+          List<GameObject> movable = careTaker.getMomento(careTaker.present).getMovable();
+          List<GameObject> statical = careTaker.getMomento(careTaker.present).getStatical();
+          List<GameObject> controlable = careTaker.getMomento(careTaker.present).getControl();
+          this.setMoving(movable);
+          this.setConstant(statical);
+          this.setControl(controlable);
+          return true;
+      }
+
      originator.setStatical((List<GameObject>) constant);
      originator.setMovable((List<GameObject>)moving);
       originator.setControl((List<GameObject>)control);
      careTaker.addMomento(originator.StoreInMomento());
-      //System.out.println(control.get(2).getX());
       lock criticalSection = new lock();
       starttime = System.nanoTime()/1000000000.0;
       passedtime = starttime - endtime;
       endtime = starttime;
       unprocessedtime += passedtime;
-    //System.out.println(unprocessedtime);
-      if(unprocessedtime > 3){
-          try {
-              moving = pool.aquireimage();
-              moving = pool.aquireimage();
-          } catch (CloneNotSupportedException e) {
-              e.printStackTrace();
+
+      if(Main.x==1) {
+
+          if (unprocessedtime > 3) {
+              counter++;
+              try {
+                  moving = pool.aquireimage();
+                  moving = pool.aquireimage();
+              } catch (CloneNotSupportedException e) {
+                  e.printStackTrace();
+              }
+              unprocessedtime = 0;
+
           }
-          unprocessedtime =0;
+      }else if(Main.x==2){
+          counter++;
+          if (unprocessedtime > 2) {
+              try {
+                  moving = pool.aquireimage();
+                  moving = pool.aquireimage();
+              } catch (CloneNotSupportedException e) {
+                  e.printStackTrace();
+              }
+              unprocessedtime = 0;
+          }
+      }else{
+          counter++;
+          if (unprocessedtime > 1) {
+              try {
+                  moving = pool.aquireimage();
+                  moving = pool.aquireimage();
+              } catch (CloneNotSupportedException e) {
+                  e.printStackTrace();
+              }
+              unprocessedtime = 0;
+          }
       }
 
     // 0 blue, 1 red, 2 pink
-    for (GameObject m : moving ) {
+      Iterator var = this.getMovableObjects().iterator();
+      GameObject m;
+    while (var.hasNext()) {
+        m = (GameObject)var.next();
         if( ((ImageObject)m).isInuse()) {
             if (intersect(control.get(1), m)) {
                 up1++;
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     copied.setContrable(true);
+                    copied.setControlledby(1);
                     control.add(copied);
                     onBar1.add(copied);
                     platesFacade = new PlatesFacade(onBar1 , (LinkedList<GameObject>) control);
                     if (platesFacade.Similarity()) {
 
                         platesFacade.deleteSimilar();
-                       // platesIntersection.addScore();
-                      //  System.out.println( "    score =      " + platesIntersection.getScore());
                         ((ScoreSubject)subject).setScore( ((ScoreSubject)subject).getScore()+1);
-                        /*
-                        if ((((ScoreSubject)subject).getScore()) > 3 && platesIntersection.getScore() <5 ){
-                            this.setSpeed(levelFacade.getLevelOneSpeed());
-                            System.out.println("the speed of the facade  plates is  " + levelFacade.getLevelOneSpeed());
-                            System.out.println("the speed of the plates is  " + this.getSpeed());
-                            System.out.println("variable speed is "+ speed);
-                        }else if (platesIntersection.getScore() >=5 && platesIntersection.getScore() <7){
-                            this.setSpeed(levelFacade.getLevelTwoSpeed());
-                            System.out.println("the speed of the facade plates is  " + levelFacade.getLevelTwoSpeed());
-                            System.out.println("variable speed is "+ speed);
-                        }else if (platesIntersection.getScore() >=7){
-                            this.setSpeed(levelFacade.getLevelThreeSpeed());
-                            System.out.println("the speed of the facade plates is  " + levelFacade.getLevelThreeSpeed());
-                            System.out.println("the speed of  plates is  " + this.getSpeed());
-                            System.out.println("variable speed is "+ speed);
-                        }
-                        */
                         up1 = up1 -3;
 
                     }
-                 /*   if(platesIntersection.isSimilar(onBar1)){
-                        System.out.println( "    score =      " + platesIntersection.addScore() );
-                        for (int i=0;i<3;i++){
-                            ImageObject temp = (ImageObject) onBar1.get(onBar1.size() - 1);
-                            temp.setVisible(false);
-                            control.remove(temp);
-                            onBar1.removeLast();
-                        }
-                        up1 = up1 -3;
-                    }*/
-
                     ((ImageObject) m).setVisible(false);
                     System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
@@ -272,39 +293,16 @@ public boolean intersect(GameObject o1 , GameObject o2){
                 try {
                     ImageObject copied = (ImageObject) cloneFactory.getColone((protoType) m);
                     copied.setContrable(true);
+                    copied.setControlledby(2);
                     control.add(copied);
                     onBar2.add(copied);
                     platesFacade = new PlatesFacade(onBar2, (LinkedList<GameObject>) control);
                     if (platesFacade.Similarity()) {
                         platesFacade.deleteSimilar();
-                       // platesIntersection.addScore();
                         ((ScoreSubject)subject).setScore( ((ScoreSubject)subject).getScore()+1);
-                        /*
-                        if (platesIntersection.getScore() > 2 && platesIntersection.getScore() <3 ){
-                            this.setSpeed(levelFacade.getLevelOneSpeed());
-                            System.out.println("the speed of the facade  plates is  " + levelFacade.getLevelOneSpeed());
-                            System.out.println("the speed of the plates is  " + this.getSpeed());
-                        }else if (platesIntersection.getScore() >=3 && platesIntersection.getScore() <4){
-                            this.setSpeed(levelFacade.getLevelTwoSpeed());
-                            System.out.println("the speed of the facade plates is  " + levelFacade.getLevelTwoSpeed());
-                        }else if (platesIntersection.getScore() >=4){
-                            this.setSpeed(levelFacade.getLevelThreeSpeed());
-                            System.out.println("the speed of the facade plates is  " + levelFacade.getLevelThreeSpeed());
-                            System.out.println("the speed of  plates is  " + this.getSpeed());
-                        }
-                        */
+
                         up2 = up2 -3;
                     }
-                    /*if(platesIntersection.isSimilar(onBar2)){
-                        System.out.println("    score =      " + platesIntersection.addScore() );
-                        for (int i=0;i<3;i++){
-                            ImageObject temp = (ImageObject) onBar2.get(onBar2.size() - 1);
-                            temp.setVisible(false);
-                            control.remove(temp);
-                            onBar2.removeLast();
-                        }
-                        up2 = up2 -3;
-                    }*/
                     ((ImageObject) m).setVisible(false);
                     System.out.println(((ImageObject) m).getColor() +"           ?");
                     System.out.println("yes");
@@ -326,13 +324,13 @@ public boolean intersect(GameObject o1 , GameObject o2){
         this.speed = speed;
     }
     public int getSpeed() {
-        System.out.println("megzooooooooooooooooooooooooo");
-      System.out.println("my speed is "+ speed);
-        return speed;
+       if(Main.x == 1)return Level1.getSpeed();
+       else if(Main.x == 2)return Level2.getSpeed();
+       else return Level3.getSpeed();
     }
   @Override
   public String getStatus() {
-    return "Score is " + Integer.toString(((ScoreObserver)o1).getScore());
+    return "Score is " + Integer.toString(((ScoreObserver)o1).getScore()) + "    time is: " + (60 - counter);
   }
 
 

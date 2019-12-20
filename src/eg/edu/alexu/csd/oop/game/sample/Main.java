@@ -9,10 +9,18 @@ import eg.edu.alexu.csd.oop.game.GameEngine;
 import eg.edu.alexu.csd.oop.game.GameEngine.GameController;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.sample.object.ButtonListener;
+import eg.edu.alexu.csd.oop.game.sample.object.continueListener;
+import eg.edu.alexu.csd.oop.game.sample.object.redolistner;
+import eg.edu.alexu.csd.oop.game.sample.world.workspace;
 
 public class Main {
-	
-	public static void main(String[] args) throws CloneNotSupportedException {
+	public  static int x;
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public  static void printgame() throws CloneNotSupportedException {
 		System.out.println("Uncomment any of the lines in the Main to run a new game, Have Fun :)");
 
 		/* -------------------------------------------------------------------- */
@@ -48,16 +56,23 @@ public class Main {
 		JMenuItem newMenuItem = new JMenuItem("New");
 		JMenuItem pauseMenuItem = new JMenuItem("Pause");
 		JMenuItem resumeMenuItem = new JMenuItem("Resume");
-		JButton btn1 = new JButton("Undo");
+
 		menu.add(newMenuItem);
 		menu.addSeparator();
 		menu.add(pauseMenuItem);
 		menu.add(resumeMenuItem);
 		menuBar.add(menu);
-		menuBar.add(btn1);
+
+		String fn = JOptionPane.showInputDialog("Enter the level 1 , 2 or 3");
+		while(Integer.parseInt(fn) <=0 || Integer.parseInt(fn) >= 4){
+			fn = JOptionPane.showInputDialog("Enter the level 1 , 2 or 3");
+		}
+	    x = Integer.parseInt(fn);
+
 		World m = new eg.edu.alexu.csd.oop.game.sample.world.workspace(800, 600);
-		btn1.addActionListener(new ButtonListener(m));
+
 		final GameController gameController = GameEngine.start("Very Simple Game in 99 Line of Code", m, menuBar, Color.BLACK);
+
 		newMenuItem.addActionListener(new ActionListener() {
 		@Override public void actionPerformed(ActionEvent e) {
 			try {
@@ -67,6 +82,7 @@ public class Main {
 			}
 		}
 		});
+
 		pauseMenuItem.addActionListener(new ActionListener() {
 		@Override public void actionPerformed(ActionEvent e) {
 				gameController.pause();

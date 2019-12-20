@@ -10,20 +10,26 @@ public class barmovex implements moveX {
         this.left = left;
     }
     @Override
-    public int moveX(int mX) {
-        if(left == 1 && this.x <= 125 && mX < 125){
-            this.x = 125;
-        }else if(left == 0 && this.x  >= 630  && mX > 630){
-            this.x = 630;
-        }else{
-            this.x = mX;
+    public boolean moveX(int mX) {
+        if(left == 0 &&  this.x <= 143 && mX < 143){
+            return false;
+        }else if(left == 1 && this.x  >= 630 && mX > 630){
+           return false;
         }
-        return this.x;
+        return true;
     }
 
     @Override
     public int moveY(int mY) {
       return this.y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     @Override
