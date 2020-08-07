@@ -5,4 +5,4 @@ plates of the same color, then they are vanished and his score increases, the pl
 at less time wins.
 # attached with the code:
 1- demo video of the project\
-2- pdf showing the uml of the project and design patterns used.
+2- pdf showing the uml of the project and used design patterns.
